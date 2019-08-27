@@ -95,8 +95,8 @@ TODO: Switch Picture
 public class LoginFeatureTest {
 protected WebDriver driver;
 
-@Test
-public void ShouldBeAbleToLogin(Method method) {
+[Test]
+public void ShouldBeAbleToLogin() {
 
 }
 }
@@ -105,7 +105,7 @@ public void ShouldBeAbleToLogin(Method method) {
 and paste it into the `LoginFeatureTest` class method: `ShouldBeAbleToLogin`.
 4. Add this `Assertion` at the end of the `ShouldBeAbleToLogin`:
 ```csharp
-Assert.assertEquals("https://www.saucedemo.com/inventory.html", driver.getCurrentUrl());
+Assert.Equals("https://www.saucedemo.com/inventory.html", driver.getCurrentUrl());
 ```
 5. Run the test:
 ```
