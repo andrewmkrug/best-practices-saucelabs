@@ -142,7 +142,7 @@ namespace Tests
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
     
             // assert that the test is finished by checking the last page's URL
-            Assert.Equals(driver.Url, complete);
+            Assert.AreEqual(driver.Url, complete);
             Console.WriteLine("asserting last page's url = 'https://www.saucedemo.com/checkout-complete.html'" );
     
             // Then quit the driver session

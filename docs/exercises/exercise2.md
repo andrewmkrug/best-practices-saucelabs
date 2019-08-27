@@ -2,30 +2,30 @@
 
 ## Part One: Create a  `LoginPage`
 1. Checkout branch `02_create_page_objects`. 
-3. In the **`pages`** package, navigate to the class called **`LoginPage`**
+3. In the **`Pages`** directory, navigate to the class called **`LoginPage`**
 4. Create the constructor for the page object:
     ```csharp
-    public LoginPage(WebDriver driver) {
+    public LoginPage(IWebDriver driver) {
         this.driver = driver;
     }
     ```
 5. Create a `visit` method in the `LoginPage` object:
     ```csharp
-    public LoginPage visit() {
-        driver.get("https://www.saucedemo.com");
+    public LoginPage Visit() {
+        driver.Navigate().GoToUrl("https://www.saucedemo.Com");
         return this;
     }
     ```
-6. Open **`LoginFeatureTest`** and import the **`LoginPage`** changes to replace **`driver.navigate().to("https://www.saucedemo.com")`** For Example:
+6. Open **`LoginFeatureTest`** and import the **`LoginPage`** changes to replace **`driver.Navigate().GoToUrl("https://www.saucedemo.Com")`** For Example:
     
     * Before
     ```csharp
-    driver.navigate().to("https://www.saucedemo.com");
+    driver.Navigate().GoToUrl("https://www.saucedemo.Com");
     ```
     * After
     ```csharp
     LoginPage LoginPage = new LoginPage(driver);
-    LoginPage.visit();
+    LoginPage.Visit();
     ```
 
 7. Run a `dotnet test` command to see if the test executes successfully:
@@ -36,9 +36,9 @@
     
 ## Part Two: Create `login()` Method
 1. Open **`LoginPage`** and create a new class method called `login()`. This method will return a new page object that represents the next page in the journey (i.e. `InventoryPage`)
-2. Add the **`LoginPage.visit()`** action in place of **`driver.navigate().to("https://www.saucedemo.com")`** The method will also expect some `String` data for the credentials (`username` and `password`). For Example:
+2. Add the **`LoginPage.visit()`** action in place of **`driver.Navigate().GoToUrl("https://www.saucedemo.Com")`** The method will also expect some `String` data for the credentials (`username` and `password`). For Example:
     ```csharp
-    public InventoryPage login(String username, String password)
+    public InventoryPage Login(String username, String password)
     {
         String userField = "[data-test='username']";
         String passField = "[data-test='password']";
@@ -48,13 +48,13 @@
 3. Add the following Selenium commands in order to send the keystrokes:
     ```csharp
     // send username keystrokes
-    driver.findElement(By.cssSelector(userField)).sendKeys(username);
+    driver.FindElement(By.CssSelector(userField)).sendKeys(username);
 
     // send password keystrokes
-    driver.findElement(By.cssSelector(passField)).sendKeys(password);
+    driver.FindElement(By.CssSelector(passField)).sendKeys(password);
 
     // click login button to submit keystrokes
-    driver.findElement(By.cssSelector(loginBtn)).click();
+    driver.FindElement(By.CssSelector(loginBtn)).Click();
     return new InventoryPage(driver);
     ```
     

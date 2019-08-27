@@ -1,7 +1,7 @@
 # Exercise 5: Create a Base Page Object
 
 1. Checkout the branch `05_create_base_page`.
-2. In `src > test > java > pages`, create a new class called `BasePage`.
+2. In `Pages` directory, create a new class called `BasePage`.
 3. Remove the following duplication:
 
 ```csharp
@@ -11,7 +11,7 @@ private final WebDriver driver;
 //TODO notice the duplication
 this.driver = driver;
 ...
-driver.navigate().to("some-url");
+driver.Navigate().GoToUrl("some-url");
 ...
 ```
 

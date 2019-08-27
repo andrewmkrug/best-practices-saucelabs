@@ -8,42 +8,38 @@
     }
     ```
 2. In **`setPageState()`** add the following
-    * **`JavaScriptExecutor`** command to bypass logging in through the **`LoginPage`** object:
-    ```csharp
-    ((JavascriptExecutor)driver).executeScript("window.sessionStorage.setItem('standard-username', 'standard-user')");
-    ```
-    * **`JavaScriptExecutor`** command to bypass adding items to the cart through the **`InventoryPage`** object:
-    ```csharp
-    ((JavascriptExecutor)driver).executeScript("window.sessionStorage.setItem('cart-contents', '[4,1]')");
-    ```
+* **`JavaScriptExecutor`** command to bypass logging in through the **`LoginPage`** object:
+```csharp
+IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+js.ExecuteScript("window.sessionStorage.setItem('standard-username', 'standard-user')");
+js.ExecuteScript("window.sessionStorage.setItem('cart-contents', '[4,1]')");
+```
 3. Add a `Boolean` method called `hasItems()`:
-    ```csharp
-    public Boolean hasItems() {
-        String cartBadge = "shopping_cart_badge";
-        return Integer.parseInt(driver.findElement(By.className(cartBadge)).getText()) > 0;
-    }
-    ```
+```csharp
+public Boolean hasItems() {
+    String cartBadge = "shopping_cart_badge";
+    return int.Parse(driver.FindElement(By.ClassName(cartBadge)).Text) > 0;
+}
+```
     
 <br />
 
 ## Part Two: Modify `CheckoutFeatureTest`
 1. Open **`CheckoutFeatureTest`**, delete the existing commands, and add the following:
-    ```csharp
-    @Test
-    public void ShouldBeAbleToCheckoutWithItems() {
-        // wait 5 seconds
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS) ;
+```csharp
+[Test]
+public void ShouldBeAbleToCheckoutWithItems()
+{
+    ConfirmationPage confirmationPage = new ConfirmationPage(driver);
+    confirmationPage.visit();
+    Assert.True(confirmationPage.isLoaded());
 
-        ConfirmationPage confirmationPage = new ConfirmationPage(driver);
-        confirmationPage.visit();
-        confirmationPage.setPageState();
-        Assert.assertTrue(confirmationPage.hasItems());
-
-        CheckoutCompletePage completePage = confirmationPage.FinishCheckout();
-        // assert that the test is finished by checking the last page's URL
-        Assert.assertTrue(completePage.IsLoaded());
-    }
-    ```
+    confirmationPage.setPageState();
+    Assert.True(confirmationPage.hasItems());
+    CheckoutCompletePage completePage = confirmationPage.FinishCheckout();
+    Assert.True(completePage.isLoaded());
+}
+```
 2. Save all and run the following command to ensure the build passes:
     ```shell
     dotnet test

@@ -6,6 +6,7 @@ namespace Tests
 {
     public class CheckoutFeatureTest : BaseTest
     {
+        [Test]
         public void ShouldBeAbleToCheckoutWithItems()
         {
             ConfirmationPage confirmationPage = new ConfirmationPage(driver);

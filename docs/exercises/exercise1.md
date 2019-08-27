@@ -105,7 +105,7 @@ public void ShouldBeAbleToLogin() {
 and paste it into the `LoginFeatureTest` class method: `ShouldBeAbleToLogin`.
 4. Add this `Assertion` at the end of the `ShouldBeAbleToLogin`:
 ```csharp
-Assert.Equals("https://www.saucedemo.com/inventory.html", driver.getCurrentUrl());
+Assert.AreEqual("https://www.saucedemo.com/inventory.html", driver.getCurrentUrl());
 ```
 5. Run the test:
 ```

@@ -41,10 +41,10 @@ integration/continuous development toolchain.
 2. Under **Downloads**, click **Mac OS X**.
 3. When the download completes, double-click the `.dmg` file open the installer package.
 4. Double-click the installer package to begin the installation.
-    > *Security Warning*
-    >
-    > You may see a warning message that the package can't be opened because it's not from a recognized developer. 
-    If this happens, go to System Preferences > Security and Privacy Settings, and click Open Anyway.
+::: warning Security Warning*
+You may see a warning message that the package can't be opened because it's not from a recognized developer. 
+If this happens, go to System Preferences > Security and Privacy Settings, and click Open Anyway.
+:::
 5. Click **Continue** for the installation, and enter your local password to authorize the installation.
 
 #### Windows:

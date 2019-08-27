@@ -4,8 +4,8 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'About', link: '/about/' },
-      { text: 'Contact', link: '/contact/' }
+      { text: 'References', link: '/references/' },
+      {text: 'Repo', link: 'https://github.com/andrewmkrug/best-practices-saucelabs'}
     ],
     sidebar: [
       {
