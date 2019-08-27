@@ -13,8 +13,8 @@ module.exports = {
         collapsable: false,
         children: [
           '/exercises/exercise1.md',
-          '/exercises/exercise2.md'
-
+          '/exercises/exercise2.md',
+          '/exercises/exercise3.md'
         ]
       }
     ]
