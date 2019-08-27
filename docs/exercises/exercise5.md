@@ -4,7 +4,7 @@
 2. In `src > test > java > pages`, create a new class called `BasePage`.
 3. Remove the following duplication:
 
-```
+```csharp
 //TODO notice the duplication
 private final WebDriver driver;
 ...
@@ -21,10 +21,10 @@ In the following classes:
 * `InventoryPage`
 * `LoginPage`
 6. Save all and run the following command to ensure the build passes:
-```
-mvn test
+```shell
+dotnet test
 ```
 7. Use `git stash` or `git commit` to discard or save your changes. Checkout the next branch to proceed to the next exercise
-```
+```shell
 git checkout 06_test_parallelization
 ```
