@@ -14,7 +14,8 @@ module.exports = {
         children: [
           '/exercises/exercise1.md',
           '/exercises/exercise2.md',
-          '/exercises/exercise3.md'
+          '/exercises/exercise3.md',
+            '/exercises/exercise4.md'
         ]
       }
     ]
