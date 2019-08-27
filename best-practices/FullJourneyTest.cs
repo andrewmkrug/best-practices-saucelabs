@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Remote;
 
 namespace Tests
@@ -13,27 +15,30 @@ namespace Tests
         public void Test1()
         {
             // Input your SauceLabs Credentials
-            String sauceUsername = System.getenv("SAUCE_USERNAME");
-            String sauceAccessKey = System.getenv("SAUCE_ACCESS_KEY");
+            String sauceUsername = Environment.GetEnvironmentVariable("SAUCE_USERNAME", EnvironmentVariableTarget.User);
+            String sauceAccessKey = Environment.GetEnvironmentVariable("SAUCE_ACCESS_KEY", EnvironmentVariableTarget.User);
     
-            MutableCapabilities capabilities = new MutableCapabilities();
-    
-            //sets browser to Firefox
-            capabilities.setCapability("browserName", "firefox");
-    
+            FirefoxOptions capabilities = new FirefoxOptions();
+
             //sets operating system to macOS version 10.13
-            capabilities.setCapability("platform", "macOS 10.13");
+            capabilities.PlatformName = "macOS 10.13";
     
             //sets the browser version to 11.1
-            capabilities.setCapability("version", "latest");
+            capabilities.BrowserVersion = "latest";
     
             //sets your test case name so that it shows up in Sauce Labs
-            capabilities.setCapability("name", method.getName());
-    
-            //sets your Sauce Labs Credentials
-            capabilities.setCapability("username", sauceUsername);
-            capabilities.setCapability("accessKey", sauceAccessKey);
-    
+
+            var sauceOptions = new Dictionary<string, object>
+            {
+                ["username"] = sauceUsername,
+                ["accessKey"] = sauceAccessKey,
+                ["name"] = TestContext.CurrentContext.Test.Name,
+                ["selenium_version"] = "3.141.59"
+            };
+            
+
+            capabilities.AddAdditionalCapability("sauce:options", sauceOptions, true);
+            
             //instantiates a remote WebDriver object with your desired capabilities
             driver = new RemoteWebDriver(new Uri("https://ondemand.saucelabs.com/wd/hub"), capabilities);
             Console.WriteLine("creating remote WebDriver and setting capabilities");
