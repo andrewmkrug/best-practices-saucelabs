@@ -3,12 +3,10 @@ using OpenQA.Selenium;
 
 namespace Tests.Pages
 {
-    public class CheckoutCompletePage
+    public class CheckoutCompletePage : BasePage
     {
-        private IWebDriver driver;
-        //TODO more duplication
-        public CheckoutCompletePage(IWebDriver driver) {
-            this.driver = driver;
+        public CheckoutCompletePage(IWebDriver driver) : base(driver)
+        {
         }
 
         public Boolean isLoaded() {

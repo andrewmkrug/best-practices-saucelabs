@@ -2,11 +2,11 @@ using OpenQA.Selenium;
 
 namespace Tests.Pages
 {
-    public class CheckoutPage
+    public class CheckoutPage : BasePage
     {
-        private IWebDriver driver;
 
-        public CheckoutPage(IWebDriver driver) {
+        public CheckoutPage(IWebDriver driver) : base(driver)
+        {
             this.driver = driver;
         }
     }

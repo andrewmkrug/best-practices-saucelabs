@@ -3,12 +3,10 @@ using OpenQA.Selenium;
 
 namespace Tests.Pages
 {
-    public class LoginPage
+    public class LoginPage : BasePage
     {
-        IWebDriver driver;
-
-        public LoginPage(IWebDriver driver) {
-            this.driver = driver;
+        public LoginPage(IWebDriver driver) : base(driver)
+        {
         }
 
         public LoginPage visit() {

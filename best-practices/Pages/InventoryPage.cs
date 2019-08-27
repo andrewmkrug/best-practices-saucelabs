@@ -3,13 +3,11 @@ using OpenQA.Selenium;
 
 namespace Tests.Pages
 {
-    public class InventoryPage
+    public class InventoryPage : BasePage
     {
-        private IWebDriver driver;
 
-        public InventoryPage(IWebDriver driver) {
-            this.driver = driver;
-        }
+        public InventoryPage(IWebDriver driver) : base()
+        { }
 
         public void addBackpackToCart() {
             String backpack = "div:nth-child(1) > div.pricebar > button";

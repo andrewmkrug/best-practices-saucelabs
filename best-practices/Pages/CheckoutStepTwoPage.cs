@@ -3,13 +3,11 @@ using OpenQA.Selenium;
 
 namespace Tests.Pages
 {
-    public class CheckoutStepTwoPage
-    {
-        private IWebDriver driver;
+    public class CheckoutStepTwoPage : BasePage
+    { 
         //TODO notice the duplication in all of page our classes
-        public CheckoutStepTwoPage(IWebDriver driver) {
-            this.driver = driver;
-        }
+        public CheckoutStepTwoPage(IWebDriver driver) : base(driver)
+        { }
 
         public ConfirmationPage fillOutInformation(String first, String last, String zip) {
             String firstNameField = "[data-test='firstName']";
