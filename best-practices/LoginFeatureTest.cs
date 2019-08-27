@@ -16,9 +16,9 @@ namespace Tests
         public void SetUp()
         {
             // Input your SauceLabs Credentials
-            String sauceUsername = Environment.GetEnvironmentVariable("SAUCE_USERNAME", EnvironmentVariableTarget.User);
+            String sauceUsername = Environment.GetEnvironmentVariable("SAUCE_USERNAME");
             String sauceAccessKey =
-                Environment.GetEnvironmentVariable("SAUCE_ACCESS_KEY", EnvironmentVariableTarget.User);
+                Environment.GetEnvironmentVariable("SAUCE_ACCESS_KEY");
 
             FirefoxOptions capabilities = new FirefoxOptions();
 

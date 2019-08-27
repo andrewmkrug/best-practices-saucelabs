@@ -13,7 +13,7 @@
 3. Copy and paste your Username and SauceLabs Access Key to your local clipboard
 4. Navigate back to IntelliJ and in the class `FullJourneyTest.cs`, update the following variables:
 
-```cs
+```csharp
 String sauceUserName = "SAUCE_USERNAME";
 String sauceAccessKey = "SAUCE_ACCESS_KEY";
 ```
@@ -28,7 +28,7 @@ you should see the results appear in your Sauce Labs Test Dashboard
 
 6. Next, modify the `sauceUserName` and `sauceAccessKey` variables to use Environment Variables:
 
-```cs
+```csharp
 String sauceUserName = System.getenv("SAUCE_USERNAME");
 String sauceAccessKey = System.getenv("SAUCE_ACCESS_KEY");
 ```
@@ -91,7 +91,7 @@ TODO: Switch Picture
 1. In `src/test/java/exercises/` create a new class called `LoginFeatureTest`.
 2. Create a new `@Test` class method called `ShouldBeAbleToLogin`:
 
-```cs
+```csharp
 public class LoginFeatureTest {
 protected WebDriver driver;
 
@@ -104,7 +104,7 @@ public void ShouldBeAbleToLogin(Method method) {
 3. In `FullJourneyTest`, copy everything related to the login feature
 and paste it into the `LoginFeatureTest` class method: `ShouldBeAbleToLogin`.
 4. Add this `Assertion` at the end of the `ShouldBeAbleToLogin`:
-```cs
+```csharp
 Assert.assertEquals("https://www.saucedemo.com/inventory.html", driver.getCurrentUrl());
 ```
 5. Run the test:

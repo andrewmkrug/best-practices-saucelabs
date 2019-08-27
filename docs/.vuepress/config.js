@@ -12,7 +12,9 @@ module.exports = {
         title: 'Exercises',
         collapsable: false,
         children: [
-          '/exercises/exercise1.md'
+          '/exercises/exercise1.md',
+          '/exercises/exercise2.md'
+
         ]
       }
     ]
