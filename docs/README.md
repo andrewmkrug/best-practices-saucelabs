@@ -7,29 +7,50 @@ meta:
     content: js vuejs vuepress
 ---
 
-# best-practices
+# Best Practices for Automated Testing
 
-> Automation testing best practices
+This directory contains example scripts and dependencies for the SauceCon workshop: [Best Practices for Automated Testing](https://saucecon.com/). Use these scripts to test your Sauce Labs authentication credentials, setup your automated testing environment, try out Sauce Labs features, and complete the in-class Selenium examples. Download the zip file or clone the entire directory to your local environment.
 
-<p align="center">
-  <img src="./images/thumbnail-256x256.png" />
-</p>
+#### For Demonstration Purposes Only
 
-[[toc]]
+The code in these scripts is provided on an "AS-IS” basis without warranty of any kind, either express or implied, including without limitation any implied warranties of condition, uninterrupted use, merchantability, fitness for a particular purpose, or non-infringement. These scripts are provided for educational and demonstration purposes only, and should not be used in production. Issues regarding these scripts should be submitted through GitHub. These scripts are maintained by the Technical Services team at Sauce Labs.
 
-##### Check out for more Markdown Extensions [here](https://vuepress.vuejs.org/guide/markdown.html#header-anchors)
+<br />
 
-## Article 1
+## Prerequisites
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+These procedures will show you to set up a Selenium environment for Java. The scripts in this repository allow you run a simple automated test to validate your Selenium environment and your [saucelabs.com](https://app.saucelabs.com/login) account credentials.
+In order to complete these exercises you must complete the following prerequisite installation and configuration steps:
 
-## Article 2
+* Install Git
+* Install DotNet Core 2.2
+* Setup Project
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+Once your test environment is up and running, refer to the [exercise guides](exercise-guides/getting-started.md) to begin the exercises.
 
-## Components
+### Install Git
 
-Source at docs/.vuepress/components/
+[Git](https://git-scm.com/doc) is a version control system that lets you check out code from a repository, 
+work with that code on your own branch, and then merge that code with any changes that have been made by other developers. 
+Git is an essential tool for distributed development teams, and is a critical component of the continuous 
+integration/continuous development toolchain.
 
-* <Demo/>
-* <Button-Counter :start="0"/>
+#### MacOSX:
+
+1. Go to [https://git-scm.com/downloads](https://git-scm.com/downloads).
+2. Under **Downloads**, click **Mac OS X**.
+3. When the download completes, double-click the `.dmg` file open the installer package.
+4. Double-click the installer package to begin the installation.
+    > *Security Warning*
+    >
+    > You may see a warning message that the package can't be opened because it's not from a recognized developer. 
+    If this happens, go to System Preferences > Security and Privacy Settings, and click Open Anyway.
+5. Click **Continue** for the installation, and enter your local password to authorize the installation.
+
+#### Windows:
+
+1. Go to [https://git-scm.com/downloads](https://git-scm.com/downloads)
+2. Under **Downloads**, click on **Windows**.
+3. When the dialog opens asking if you want to allow the app to make changes to your device, click Yes.
+4. Follow the steps in the setup wizard to complete the installation. You should accept all the default settings.
+<br />

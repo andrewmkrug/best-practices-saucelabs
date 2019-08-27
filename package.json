@@ -1,7 +1,13 @@
 {
+  "name": "test-automation-best-practices",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "build": "vuepress build docs && mv docs/.vuepress/dist public"
+
   },
   "dependencies": {
     "vuepress": "^1.0.3"
