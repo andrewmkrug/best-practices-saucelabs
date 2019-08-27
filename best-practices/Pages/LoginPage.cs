@@ -33,7 +33,7 @@ namespace Tests.Pages
         }
         
         public Boolean isLoaded() {
-            return pageWait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.ClassName("bot_column"))).isDisplayed();
+            return pageWait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.ClassName("bot_column"))).Count > 0;
         }
     }
 }

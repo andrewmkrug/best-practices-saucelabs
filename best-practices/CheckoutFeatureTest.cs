@@ -14,7 +14,7 @@ namespace Tests
 
             confirmationPage.setPageState();
             Assert.True(confirmationPage.hasItems());
-            CheckoutCompletePage completePage = confirmationPage.finishCheckout();
+            CheckoutCompletePage completePage = confirmationPage.FinishCheckout();
             Assert.True(completePage.isLoaded());
         }
     }

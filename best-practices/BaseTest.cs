@@ -47,7 +47,7 @@ namespace Tests
         }
 
         [TearDown]
-        public void Teardown(ITestResult result)
+        public void Teardown()
         {
             //Checks the status of the test and passes the result to the Sauce Labs job
             var passed = TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Passed;
@@ -56,3 +56,4 @@ namespace Tests
             driver.Quit();
         }
     }
+}

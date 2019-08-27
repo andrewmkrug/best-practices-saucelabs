@@ -13,7 +13,7 @@ namespace Tests.Pages
 
         public CheckoutStepTwoPage checkout() {
             String checkoutLink = "div.cart_footer > a.btn_action.checkout_button";
-            driver.FindElement(By.CssSelector(checkoutLink)).click();
+            driver.FindElement(By.CssSelector(checkoutLink)).Click();
             return new CheckoutStepTwoPage(driver);
         }
     }
