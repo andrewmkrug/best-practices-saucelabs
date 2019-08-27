@@ -8,12 +8,10 @@ using OpenQA.Selenium.Remote;
 
 namespace Tests
 {
-    public class LoginFeatureTest
+    public class LoginFeatureTest : BaseTest
     {
-        protected IWebDriver driver;
-
         [SetUp]
-        public void SetUp()
+        public void Setup()
         {
             // Input your SauceLabs Credentials
             String sauceUsername = Environment.GetEnvironmentVariable("SAUCE_USERNAME");
@@ -44,7 +42,7 @@ namespace Tests
             //instantiates a remote WebDriver object with your desired capabilities
             driver = new RemoteWebDriver(new Uri("https://ondemand.saucelabs.com/wd/hub"), capabilities);
         }
-
+        
         [Test]
         public void ShouldBeAbleToLogin()
         {
