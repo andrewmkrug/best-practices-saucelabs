@@ -1,5 +1,6 @@
 using System;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace Tests.Pages
 {
@@ -10,7 +11,7 @@ namespace Tests.Pages
         }
 
         public LoginPage visit() {
-            driver.Navigate().GoToUrl("https://www.saucedemo.com");
+            driver.Navigate().GoToUrl(baseUrl);
             return this;
         }
 
@@ -29,6 +30,10 @@ namespace Tests.Pages
             // click login button to submit keystrokes
             driver.FindElement(By.CssSelector(loginBtn)).Click();
             return new InventoryPage(driver);
+        }
+        
+        public Boolean isLoaded() {
+            return pageWait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.ClassName("bot_column"))).isDisplayed();
         }
     }
 }

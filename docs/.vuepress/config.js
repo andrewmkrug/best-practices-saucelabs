@@ -17,6 +17,7 @@ module.exports = {
           '/exercises/exercise3.md',
             '/exercises/exercise4.md',
           '/exercises/exercise5.md',
+          '/exercises/exercise6.md',
 
         ]
       }

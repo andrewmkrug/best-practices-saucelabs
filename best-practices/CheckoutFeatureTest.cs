@@ -8,16 +8,14 @@ namespace Tests
     {
         public void ShouldBeAbleToCheckoutWithItems()
         {
-            // wait 5 seconds
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             ConfirmationPage confirmationPage = new ConfirmationPage(driver);
             confirmationPage.visit();
+            Assert.True(confirmationPage.isLoaded());
+
             confirmationPage.setPageState();
             Assert.True(confirmationPage.hasItems());
-
-            CheckoutCompletePage completePage = confirmationPage.FinishCheckout();
-            // assert that the test is finished by checking the last page's URL
-            Assert.True(completePage.IsLoaded());
+            CheckoutCompletePage completePage = confirmationPage.finishCheckout();
+            Assert.True(completePage.isLoaded());
         }
     }
 }

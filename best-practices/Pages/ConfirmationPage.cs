@@ -1,5 +1,6 @@
 using System;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace Tests.Pages
 {
@@ -10,7 +11,7 @@ namespace Tests.Pages
         }
         public void visit()
         {
-            driver.Navigate().GoToUrl("https://www.saucedemo.com/checkout-step-two.html");
+            driver.Navigate().GoToUrl(baseUrl + "/checkout-step-two.html");
         }
 
         public void setPageState()
@@ -30,6 +31,10 @@ namespace Tests.Pages
             IWebElement finishButton = driver.FindElement(By.CssSelector(finished));
             finishButton.Click();
             return new CheckoutCompletePage(driver);
+        }
+        
+        public Boolean isLoaded() {
+            return pageWait.Until(ExpectedConditions.UrlContains("checkout-step-two.html"));
         }
     }
 }
